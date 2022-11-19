@@ -1,5 +1,16 @@
+version: '2.0'
 services:
-  areyouok:
-    build: .
+   ql:
+    image: whyour/qinglong:latest
+    container_name: ql
+    restart: always
+    volumes:
+       - /qinglong/ql/config:/ql/config
+       - /qinglong/ql/scripts:/ql/scripts
+       - /qinglong/ql/repo:/ql/repo
+       - /qinglong/ql/log:/ql/log
+       - /qinglong/ql/db:/ql/db
+       - /qinglong/ql/jbot:/ql/jbot
+       - /qinglong/ql/raw:/ql/raw
     ports:
-      - 80:80
+       - 5801:5700
